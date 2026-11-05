@@ -1,0 +1,23 @@
+Package: dreamphone
+Type: Package
+Title: Play Electronic Dreamphone 
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Rhian", "Davies",
+      email = "statsrhian@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: Be transported back to the 90s and play Electronic Dreamphone in your R console.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.5)
+Config/roxygen2/version: 8.0.0
+Imports: 
+    dplyr,
+    glue,
+    purrr,
+    S7
