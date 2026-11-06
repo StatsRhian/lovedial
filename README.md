@@ -8,7 +8,7 @@
 Guess who likes you in this secret admirer phone game.
 
 ## Installation
-Tun the following R command to install {lovedial}:
+Run the following R command to install {lovedial}:
 
 ```{r}
 # install.packages("pak") # if not already installed
