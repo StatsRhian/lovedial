@@ -8,6 +8,8 @@ eliminate(person, ...)
 }
 \arguments{
 \item{person}{A person object.}
+
+\item{...}{Additional arguments passed to methods.}
 }
 \description{
 Eliminate a person

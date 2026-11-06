@@ -72,4 +72,4 @@ tibble::tribble(
                                                                        "beach",                                                     "Sandy Bay", "\U1F30A",
                                                                      "leisure",                                                 "Leisure World", "\U1F3CB"
                                                                )
-usethis::use_data(phrases, overwrite = TRUE)
+usethis::use_data(phrases, internal = TRUE, overwrite = TRUE)

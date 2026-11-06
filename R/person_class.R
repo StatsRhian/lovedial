@@ -16,7 +16,7 @@
     )
   )
 
-  #' Creates a list of 24 people from the people_meta
+#' Creates a list of 24 people from the people_meta
 make_people <- function(){
  people_objects <- purrr::pmap(
     people_meta,
@@ -30,6 +30,7 @@ make_people <- function(){
 #' Call a person
 #'
 #' @param person A person object.
+#' @param ... Additional arguments passed to methods.
 #' @export
 dial <- S7::new_generic(
   "dial",
@@ -43,6 +44,7 @@ S7::method(dial, person) <- function(person) {
 #' Guess a person
 #'
 #' @param person A person object.
+#' @param ... Additional arguments passed to methods.
 #' @export
 guess <- S7::new_generic(
   "guess",
@@ -56,6 +58,7 @@ S7::method(guess, person) <- function(person) {
 #' Eliminate a person
 #'
 #' @param person A person object.
+#' @param ... Additional arguments passed to methods.
 #' @export
 eliminate <- S7::new_generic(
   "eliminate",

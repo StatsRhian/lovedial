@@ -1,14 +1,11 @@
 Package: lovedial
 Type: Package
-Title: Love dial 
+Title: Lovedial 
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Rhian", "Davies",
-      email = "statsrhian@gmail.com",
-      role = c("aut", "cre")
-    )
-  )
+Authors@R: utils::person(
+    "Rhian", "Davies",
+    email = "statsrhian@gmail.com", 
+    role = c("aut", "cre"))
 Description: Guess who likes you in this secret admirer phone game.
 License: GPL (>= 3)
 Encoding: UTF-8
@@ -17,6 +14,7 @@ Depends:
     R (>= 4.1)
 Config/roxygen2/version: 8.1.1
 Imports: 
+    cli,
     dplyr,
     glue,
     purrr,
