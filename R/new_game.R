@@ -3,21 +3,27 @@
 #' @export
 new_game <- function(){
   set.seed(5555)
-  boys <- make_boys()
-  boys[[sample(24,1)]]@admirer <- TRUE
-  boys <- generate_clues(boys)
+  people <- make_people()
+  people[[sample(24,1)]]@admirer <- TRUE
+  people <- generate_clues(people)
+  board <- initialise_board()
+  print(board$summary)
 
+  cli::cli_h1("\U260E  Lovedial")
+  cli::cli_alert_info(
+    "Call someone with `dial(Name)`"
+  )
   # Create individual objects in the calling environment
-  list2env(boys, envir = parent.frame())
+  list2env(people, envir = parent.frame())
 
   invisible(NULL)
 }
 
-generate_clues <- function(boys){
-  clues <- boys_meta |> dplyr::select(.data$name, .data$gives)
+generate_clues <- function(people){
+  clues <- people_meta |> dplyr::select(.data$name, .data$gives)
   admirer <- purrr::detect(
-    boys,
-    \(boy) S7::prop(boy, "admirer")
+    people,
+    \(person) S7::prop(person, "admirer")
   )
 
   clues <-
@@ -28,20 +34,20 @@ generate_clues <- function(boys){
     ) |>
     dplyr::ungroup()
 
-  # Assign game properties to boys objects
-  boys <- purrr::map2(
-    boys,
-    names(boys),
-    \(boy, name) {
-      S7::prop(boy, "clue") <- clues$value[match(name, clues$name)]
-      boy
+  # Assign game properties to people
+  people <- purrr::map2(
+    people,
+    names(people),
+    \(person, name) {
+      S7::prop(person, "clue") <- clues$value[match(name, clues$name)]
+      person
     }
   )
-  return(boys)
+  return(people)
 }
 
 get_valid_clue <- function(admirer, clue_type) {
-  all_choices <- unique(boys_meta[[clue_type]])
+  all_choices <- unique(people_meta[[clue_type]])
   all_choices <- all_choices[!is.na(all_choices)]
 
   admirer_clue <- S7::prop(admirer, clue_type)

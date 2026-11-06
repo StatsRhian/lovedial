@@ -1,6 +1,6 @@
-Package: dreamphone
+Package: lovedial
 Type: Package
-Title: Play Electronic Dreamphone 
+Title: Love dial 
 Version: 0.1.0
 Authors@R: c(
     person(
@@ -9,13 +9,13 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Be transported back to the 90s and play Electronic Dreamphone in your R console.
+Description: Guess who likes you in this secret admirer phone game.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Depends: 
-    R (>= 3.5)
-Config/roxygen2/version: 8.0.0
+    R (>= 4.1)
+Config/roxygen2/version: 8.1.1
 Imports: 
     dplyr,
     glue,
