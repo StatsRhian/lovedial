@@ -40,21 +40,6 @@ S7::method(dial, person) <- function(person) {
   give_clue(person)
 }
 
-
-give_clue <- function(person) {
-  
-  dial_cli(person)
-  
-  response <- if (person@clue == "dud") {
-    speak("dud")
-  } else {
-    clue_type = paste0("clue_",person@gives)
-    glue::glue("{speak(clue_type)} {speak(person@clue)}")
-  }
-  cli::cli_text("\U1F4AC {response}")
-}
-
-
 #' Guess a person
 #'
 #' @param person A person object.
@@ -68,27 +53,16 @@ S7::method(guess, person) <- function(person) {
   guess_response(person)
 }
 
-guess_response <- function(person){
-  
-  dial_cli(person)
+#' Eliminate a person
+#'
+#' @param person A person object.
+#' @export
+eliminate <- S7::new_generic(
+  "eliminate",
+  dispatch_args = "person"
+)
 
-  if(person@admirer){
-    response <- glue::glue("\U1F4AC {speak('correct')}")
-    }
-  else{
-    response <- glue::glue("\U1F4AC {speak('wrong')}")
-  }
-  cli::cli_text("\U1F4AC {response}")
-  }
-
-speak <- function(key, lang = "en"){
-  phrases[[lang]][match(key, phrases$key)]
-}
-
-dial_cli <- function(person){
-  cli::cli_h1("\U260E  Lovedial")
-  cli::cli_alert_info(
-    "Dialling {person@name}..."
-  )
-  Sys.sleep(1)
+S7::method(eliminate, person) <- function(person) {
+  .game$board <- .game$board |>
+    dplyr::filter(name != person@name)
 }
