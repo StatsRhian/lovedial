@@ -23,8 +23,8 @@ new_game()
 
 ```
 ── ☎  Lovedial ─────────────────────────────────────────────────────────────
-📞 Dial: `dial(Name)`
-❌ Eliminate: `eliminate(Name)`
-❓ Guess: `guess(Name)`
-👀 View board: `view_board()`
+📞 Dial: dial(Name)
+❌ Eliminate: eliminate(Name)
+❓ Guess: guess(Name)
+👀 View board: view_board()
 ```
