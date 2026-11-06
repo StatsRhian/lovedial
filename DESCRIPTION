@@ -8,6 +8,8 @@ Authors@R: person(
     role = c("aut", "cre"))
 Description: Guess who likes you in this secret admirer phone game.
 License: GPL (>= 3)
+URL: https://statsrhian.github.io/lovedial/
+BugReports: https://github.com/statsrhian/lovedial/issues
 Encoding: UTF-8
 LazyData: true
 Depends: 
