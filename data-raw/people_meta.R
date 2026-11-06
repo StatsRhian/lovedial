@@ -30,5 +30,5 @@ people_meta <-
   people_meta |>
   dplyr::mutate(number = paste0("555-", number))
 
-usethis::use_data(people_meta, internal = TRUE, overwrite = TRUE)
+usethis::use_data(people_meta, overwrite = TRUE)
 
