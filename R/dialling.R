@@ -3,10 +3,10 @@ guess_response <- function(person){
   
   dial_cli(person)
   if(person@admirer){
-    response <- glue::glue("\U1F4AC {speak('correct')}")
+    response <- glue::glue("{speak('correct')}")
     }
   else{
-    response <- glue::glue("\U1F4AC {speak('wrong')}")
+    response <- glue::glue("{speak('wrong')}")
   }
   cli::cli_text("\U1F4AC {response}")
   }
