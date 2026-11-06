@@ -1,3 +1,41 @@
+#' Game phrases and display labels
+#'
+#' A collection of phrases used throughout the game to generate character
+#' dialogue, clues and responses. Also provides human-readable labels and
+#' emoji representations for character attributes.
+#'
+#' The data is used to translate internal attribute values into text
+#' displayed to the player.
+#'
+#' @format A tibble with 3 variables:
+#' \describe{
+#'   \item{key}{Internal identifier for the phrase or attribute.}
+#'   \item{en}{English-language text associated with the key. This may be
+#'   dialogue, a clue template or a human-readable attribute label.}
+#'   \item{emoji}{Emoji representation of the attribute, where applicable.
+#'   Missing values indicate that no emoji is associated with the phrase.}
+#' }
+#'
+#' @details
+#' The `key` column contains several types of entries:
+#' \describe{
+#'   \item{Dialogue}{General responses used during gameplay, such as
+#'   `dud`, `rep`, `correct` and `wrong`.}
+#'   \item{Clue templates}{Partial sentences used to introduce clues about
+#'   clothing, locations, food and sports.}
+#'   \item{Attributes}{Human-readable labels and emoji for character
+#'   attributes, including clothing, food, sports and locations.}
+#' }
+#'
+#' The `en` column contains the English-language version of each phrase.
+#' The structure allows additional language columns to be added in future.
+#'
+#' @source Fictional game dialogue and labels created for this package.
+#'
+#' @seealso [people_meta] for the character attributes that use these phrases.
+#' @keywords datasets
+"phrases"
+
 phrases <-
 tibble::tribble(
                                                                           ~key,                                                             ~en,      ~emoji,
