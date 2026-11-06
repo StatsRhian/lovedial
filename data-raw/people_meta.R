@@ -20,10 +20,10 @@ people_meta <- tibble::tribble(
        "Toby",   "beach",   2442L,    "volleyball",         NA,     "hat",     "food",
      "Willow",   "beach",   3535L,       "surfing",         NA,   "scarf",  "wearing",
         "Mia",   "beach",   2226L,       "surfing",         NA,     "hat",  "wearing",
-      "Sarah", "lesiure",   5599L,    "basketball",         NA,   "scarf",  "wearing",
-        "Ben", "lesiure",   4884L,    "basketball",         NA, "glasses",  "wearing",
-      "Chloe", "lesiure",   6668L,        "tennis",         NA,     "hat",  "wearing",
-   "Mohammed", "lesiure",   7557L,        "tennis",         NA, "glasses",  "wearing"
+      "Sarah", "leisure",   5599L,    "basketball",         NA,   "scarf",  "wearing",
+        "Ben", "leisure",   4884L,    "basketball",         NA, "glasses",  "wearing",
+      "Chloe", "leisure",   6668L,        "tennis",         NA,     "hat",  "wearing",
+   "Mohammed", "leisure",   7557L,        "tennis",         NA, "glasses",  "wearing"
   )
 
 people_meta <-
