@@ -6,14 +6,14 @@
 \alias{lovedial-package}
 \title{lovedial: Lovedial}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Guess who likes you in this secret admirer phone game.
 }
-\author{
-\strong{Maintainer}: Rhian Davies \email{statsrhian@gmail.com}
-
-Authors:
+\seealso{
+Useful links:
 \itemize{
-  \item Rhian Davies \email{statsrhian@gmail.com}
+  \item \url{https://statsrhian.github.io/lovedial/}
 }
 
 }
