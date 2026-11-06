@@ -11,6 +11,7 @@ Authors@R: c(
   )
 Description: Guess who likes you in this secret admirer phone game.
 License: GPL (>= 3)
+URL: https://statsrhian.github.io/lovedial
 Encoding: UTF-8
 LazyData: true
 Depends: 
