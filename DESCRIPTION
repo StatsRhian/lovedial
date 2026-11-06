@@ -2,7 +2,7 @@ Package: lovedial
 Type: Package
 Title: Lovedial 
 Version: 0.1.0
-Authors@R: utils::person(
+Authors@R: person(
     "Rhian", "Davies",
     email = "statsrhian@gmail.com", 
     role = c("aut", "cre"))
