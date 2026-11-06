@@ -21,8 +21,10 @@ library("lovedial")
 new_game()
 ```
 
+```
 ── ☎  Lovedial ─────────────────────────────────────────────────────────────
 📞 Dial: `dial(Name)`
 ❌ Eliminate: `eliminate(Name)`
 ❓ Guess: `guess(Name)`
 👀 View board: `view_board()`
+```
