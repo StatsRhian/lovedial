@@ -1,23 +1,23 @@
-Package: lovedial
 Type: Package
-Title: Lovedial 
-Version: 0.1.0
-Authors@R: person(
-    "Rhian", "Davies",
-    email = "statsrhian@gmail.com", 
-    role = c("aut", "cre"))
+Package: lovedial
+Title: Lovedial
+Version: 0.1.1
+Authors@R: 
+    person("Rhian", "Davies", , "statsrhian@gmail.com", role = c("aut", "cre"))
 Description: Guess who likes you in this secret admirer phone game.
 License: GPL (>= 3)
 URL: https://statsrhian.github.io/lovedial/
 BugReports: https://github.com/statsrhian/lovedial/issues
-Encoding: UTF-8
-LazyData: true
 Depends: 
     R (>= 4.1)
-Config/roxygen2/version: 8.1.1
 Imports: 
+    beepr,
     cli,
     dplyr,
     glue,
     purrr,
-    S7
+    S7,
+    withr
+Config/roxygen2/version: 8.1.1
+Encoding: UTF-8
+LazyData: true
