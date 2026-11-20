@@ -1,14 +1,18 @@
 guess_response <- function(person) {
   dial_cli(person = person, is_guess = TRUE)
+  if (person@admirer) {
     response <- glue::glue("{speak('correct')}")
-    }
-  else{
+    beepr::beep(
+      system.file("assets", "audio", "guess_win.wav",
+                  package = "lovedial")
+    )
+  } else {
     response <- glue::glue("{speak('wrong')}")
   }
   cli::cli_text("\U1F4AC {response}")
-  }
+}
 
-speak <- function(key, lang = "en"){
+speak <- function(key, lang = "en") {
   phrases[[lang]][match(key, phrases$key)]
 }
 
@@ -20,11 +24,11 @@ dial_cli <- function(person, is_guess = FALSE) {
 
 give_clue <- function(person) {
   dial_cli(person = person)
-  
+
   response <- if (person@clue == "dud") {
     speak("dud")
   } else {
-    clue_type = paste0("clue_",person@gives)
+    clue_type = paste0("clue_", person@gives)
     glue::glue("{speak(clue_type)} {speak(person@clue)}")
   }
   cli::cli_text("\U1F4AC {response}")
