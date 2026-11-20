@@ -23,6 +23,7 @@ give_clue <- function(person) {
     speak("dud")
   } else {
     clue_type = paste0("clue_", person@gives)
+    play_audio(person@clue, group = "clue")
     glue::glue("{speak(clue_type)} {speak(person@clue)}")
   }
   cli::cli_text("\U1F4AC {response}")
