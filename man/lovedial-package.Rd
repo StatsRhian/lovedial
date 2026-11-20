@@ -14,6 +14,7 @@ Guess who likes you in this secret admirer phone game.
 Useful links:
 \itemize{
   \item \url{https://statsrhian.github.io/lovedial/}
+  \item Report bugs at \url{https://github.com/statsrhian/lovedial/issues}
 }
 
 }

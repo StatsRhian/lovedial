@@ -1,7 +1,7 @@
 Package: lovedial
 Type: Package
 Title: Lovedial 
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person(
     "Rhian", "Davies",
     email = "statsrhian@gmail.com", 
@@ -16,8 +16,10 @@ Depends:
     R (>= 4.1)
 Config/roxygen2/version: 8.1.1
 Imports: 
+    beepr,
     cli,
     dplyr,
     glue,
     purrr,
-    S7
+    S7,
+    withr
