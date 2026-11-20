@@ -1,14 +1,8 @@
-guess_response <- function(person) {
+guess_response <- function(person, lang = "en") {
   dial_cli(person = person, is_guess = TRUE)
-  if (person@admirer) {
-    response <- glue::glue("{speak('correct')}")
-    beepr::beep(
-      system.file("assets", "audio", "guess_win.wav",
-                  package = "lovedial")
-    )
-  } else {
-    response <- glue::glue("{speak('wrong')}")
-  }
+  guess_status <- ifelse(person@admirer, "correct", "wrong")
+  play_audio(guess_status, group = "guess")
+  response <- speak(guess_status, lang = lang)
   cli::cli_text("\U1F4AC {response}")
 }
 
@@ -52,20 +46,15 @@ dial_number <- function(person, is_guess = FALSE) {
         format = "{cli::pb_spin} {cli::pb_name}: {cli::pb_status}",
         clear = FALSE
       )
-      beepr::beep(
-        system.file("assets", "audio", "phone_sounds", "tone_dial.wav",
-                    package = "lovedial")
-      )
+      play_audio("tone_dial", group = "phone")
+
       dialled <- ""
 
       # If making a guess, start with the hash key
       if (is_guess) {
         dialled <- "#"
         cli::cli_progress_update(status = dialled)
-        beepr::beep(
-          system.file("assets", "audio", "phone_sounds", "key_hash-guess.wav",
-                      package = "lovedial")
-        )
+        play_audio("key_hash-guess", group = "phone")
       }
 
       # Start dialling numbers
@@ -75,12 +64,7 @@ dial_number <- function(person, is_guess = FALSE) {
         }
         dialled <- paste0(dialled, digit)
         cli::cli_progress_update(status = dialled)
-        beepr::beep(
-          system.file(
-            "assets", "audio", "phone_sounds", sprintf("key_%s.wav", digit),
-            package = "lovedial"
-          )
-        )
+        play_audio(paste0("key_", digit), group = "phone")
       }
 
       # wait for answer
@@ -90,12 +74,7 @@ dial_number <- function(person, is_guess = FALSE) {
           cli::cli_progress_update(
             status = paste0(dialled, " [Ringing", dots, " ]")
           )
-          beepr::beep(
-            system.file(
-              "assets", "audio", "phone_sounds", "tone_ringback.wav",
-              package = "lovedial"
-            )
-          )
+          play_audio("tone_ringback", group = "phone")
         }
         cli::cli_progress_update(status = paste(dialled, "[Ringing...]"))
         Sys.sleep(0.9)
